@@ -25,3 +25,17 @@ def add_view(request):
     }
     return render(request, 'profiles/add_view.html', context)
 
+def login_view(request):
+    r = requests.post("http://127.0.0.1:8000/api/login/", data={'username': 'test@test.ru', 'password': 'test123'})
+    status = r.status_code
+    if status == 200:
+        message = 'Welcome!'
+    else:
+        message = 'Access denied...'
+    content = r.json()
+    print(content)
+    context = {
+        'message': message,
+        }
+    return render(request, 'profiles/login_view.html', context)
+
