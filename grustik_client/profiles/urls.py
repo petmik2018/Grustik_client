@@ -4,5 +4,7 @@ import profiles.views as profiles
 app_name = 'profiles'
 
 urlpatterns = [
-    path('test', profiles.test_view, name='test_view'),
+    path('test/', profiles.test_view, name='test_view'),
+    path('add/', profiles.add_view, name='add_view'),
 ]
+

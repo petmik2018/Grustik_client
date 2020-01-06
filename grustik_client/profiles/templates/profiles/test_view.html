@@ -5,6 +5,10 @@
     <title>Test</title>
 </head>
 <body>
- {{ message }}
+    Пользователей в базе: {{users_qty}}
+    {% for item in user_data %}
+        <br>
+        {{ item.id }} {{ item.name }} {{ item.email }}
+    {% endfor %}
 </body>
 </html>
